@@ -1,0 +1,26 @@
+app:
+    name: Apollo
+    code: APOLLO
+    notify: mpmathew@ecloudcontrol.com
+    
+build:
+    version: 1.4
+    env: DEV
+    build_file: none
+    output_files: output/*.zip
+    image_template: apollo-1.4exf
+
+deploy:
+    context: exf/DEV
+    replicas: 1
+    port:
+    - 4200
+  
+properties:
+    HASURA_API_URL: http://hasura-2-3exf-2-38:3000/v1alpha1/graphql
+    PREFECT_API_URL: http://graphql-1-4exf-1-4:4201/graphql/
+    PREFECT_API_HEALTH_URL: http://graphql-1-4exf-1-4:4201/health
+    PREFECT_SERVER__TELEMETRY__ENABLED: true
+    GRAPHQL_SERVICE_HOST: http://graphql-1-4exf-1-4
+    GRAPHQL_SERVICE_PORT: 4201
+    revision : 42
