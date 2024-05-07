@@ -23,4 +23,4 @@ properties:
     PREFECT_SERVER__TELEMETRY__ENABLED: true
     GRAPHQL_SERVICE_HOST: http://graphql-1-4exf-1-4
     GRAPHQL_SERVICE_PORT: 4201
-    revision : 43
+    revision : 44
